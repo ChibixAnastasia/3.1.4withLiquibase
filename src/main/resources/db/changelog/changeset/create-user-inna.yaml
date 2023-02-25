@@ -1,0 +1,27 @@
+databaseChangeLog:
+- changeSet:
+    id: create-user-inna
+    author: ChibixAnastasiya
+    comment: "Create admin user"
+    changes:
+      - insert:
+          tableName: users
+          columns:
+            - column:
+                name: name
+                value: "Inna"
+            - column:
+                name: position
+                value: "woman"
+            - column:
+                name: email
+                value: "admin@server.com"
+            - column:
+                name: login
+                value: "adminInna"
+            - column:
+                name: password
+                value: "admin"
+            - column:
+                name: users_roles
+                value: "admin"

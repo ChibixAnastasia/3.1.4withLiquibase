@@ -1,0 +1,27 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-user-guest
+      author: ChibixAnastasiya
+      comment: "Create user guest"
+      changes:
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: name
+                  value: "guest"
+              - column:
+                  name: position
+                  value: "man"
+              - column:
+                  name: email
+                  value: "guest@server.com"
+              - column:
+                  name: login
+                  value: "guest"
+              - column:
+                  name: password
+                  value: "guest"
+              - column:
+                  name: users_roles
+                  value: "user"

@@ -1,0 +1,39 @@
+databaseChangelog:
+- changeSet:
+    id: create-table-users
+    author: ChibixAnastasiya
+    changes:
+      - createTable:
+          tableName: users
+          columns:
+            - column:
+                name: id
+                type: BIGINT
+                autoIncrement: true
+                constraints:
+                  primaryKey: true
+                  nullable: false
+            - column:
+                name: name
+                type: varchar(50)
+                constraints:
+                  nullable: false
+            - column:
+                name: position
+                type: varchar(50)
+            - column:
+                name: email
+                type: varchar(50)
+            - column:
+                name: login
+                type: varchar(50)
+            - column:
+                name: password
+                type: varchar(512)
+                constraints:
+                  nullable: false
+            - column:
+                name: users_roles
+                type: varchar(50)
+                constraints:
+                  nullable: false

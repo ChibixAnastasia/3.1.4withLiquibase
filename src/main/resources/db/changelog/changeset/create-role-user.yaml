@@ -1,0 +1,11 @@
+databaseChangeLog:
+- changeSet:
+    id: create-role-user
+    author: ChibixAnastasiya
+    comment: create user role
+    changes:
+      - insert:
+          tableName: roles
+          -column:
+            name: name
+            value: user

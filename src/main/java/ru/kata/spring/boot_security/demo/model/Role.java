@@ -1,11 +1,17 @@
 package ru.kata.spring.boot_security.demo.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 
 import javax.persistence.*;
 import java.util.Set;
 
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 @Table(name = "roles")
 public class Role implements GrantedAuthority {
 
@@ -16,55 +22,11 @@ public class Role implements GrantedAuthority {
     @Column(name = "name")
     private String name;
 
-//    -- Чтобы не было бесконечного цикла
-//    @ManyToMany(mappedBy = "roles")
-//    public Set<User> users;
-
-    public Role() {
-    }
-
-    public Role(String name) {
-        this.name = name;
-    }
-
-    public Role(long id, String name) {
-        this.id = id;
-        this.name = name;
-    }
-
     public String getOnlyName() { return name.substring(5); }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-//    public Set<User> getUsers() {
-//        return users;
-//    }
-//
-//    public void setUsers(Set<User> users) {
-//        this.users = users;
-//    }
 
     @Override
     public String getAuthority() {
         return getName();
     }
 
-    @Override
-    public String toString() {
-        return getName();
-    }
 }

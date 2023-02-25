@@ -1,0 +1,26 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/changeset/create-user-table.yaml
+  - include:
+      file: db/changelog/changeset/create-user-inna.yaml
+  - include:
+      file: db/changelog/changeset/create-user-guest.yaml
+  - include:
+      file: db/changelog/changeset/create-table-roles.yaml
+  - include:
+      file: db/changelog/changeset/create-role-user.yaml
+  - include:
+      file: db/changelog/changeset/create-role-admin.yaml
+  - include:
+      file: db/changelog/changeset/change-user-inna.yaml
+
+
+
+
+
+
+#      rollback:
+#        - delete:
+#            tableName: users
+#            where: username in ( 'guest')
+
